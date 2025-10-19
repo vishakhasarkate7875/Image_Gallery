@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Attractive Image Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Pictures Gallery</h1>
+    <p class="subtitle">Responsive • Lightbox • Filters • Smooth transitions</p>
+  </header>
+
+  <section class="controls">
+    <div class="categories" role="toolbar" aria-label="Filter images by category">
+      <button class="cat-btn active" data-cat="all">All</button>
+      <button class="cat-btn" data-cat="nature">Nature</button>
+      <button class="cat-btn" data-cat="city">City</button>
+      <button class="cat-btn" data-cat="people">People</button>
+    </div>
+
+    <div class="filter-controls">
+      <label for="img-filter">Image effect:</label>
+      <select id="img-filter" aria-label="Image filter">
+        <option value="none">None</option>
+        <option value="grayscale(100%)">Grayscale</option>
+        <option value="sepia(60%)">Sepia</option>
+        <option value="contrast(120%)">High Contrast</option>
+      </select>
+    </div>
+  </section>
+
+  <main>
+    <div class="gallery" id="gallery">
+      <!-- Images: each .card has data-category -->
+      <!-- Using picsum.photos placeholders; replace src with your own images if you like -->
+      <figure class="card" data-category="nature" data-caption="Foggy forest">
+        <img src="https://picsum.photos/id/1018/800/600" alt="Foggy forest" loading="lazy" />
+        <figcaption>Foggy forest</figcaption>
+      </figure>
+
+      <figure class="card" data-category="city" data-caption="City skyline">
+        <img src="https://picsum.photos/id/1011/800/600" alt="City skyline" loading="lazy" />
+        <figcaption>City skyline</figcaption>
+      </figure>
+
+      <figure class="card" data-category="people" data-caption="Portrait">
+        <img src="https://picsum.photos/id/1005/800/600" alt="Portrait" loading="lazy" />
+        <figcaption>Portrait</figcaption>
+      </figure>
+
+      <figure class="card" data-category="nature" data-caption="Mountain lake">
+        <img src="https://picsum.photos/id/1025/800/600" alt="Mountain lake" loading="lazy" />
+        <figcaption>Mountain lake</figcaption>
+      </figure>
+
+      <figure class="card" data-category="city" data-caption="Street life">
+        <img src="https://picsum.photos/id/1043/800/600" alt="Street life" loading="lazy" />
+        <figcaption>Street life</figcaption>
+      </figure>
+
+      <figure class="card" data-category="people" data-caption="Smiling">
+        <img src="https://picsum.photos/id/1012/800/600" alt="Smiling" loading="lazy" />
+        <figcaption>Smiling</figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lb-close" class="lb-close" aria-label="Close (Esc)">✕</button>
+    <button id="lb-prev" class="lb-nav lb-prev" aria-label="Previous (Left arrow)">‹</button>
+    <div class="lb-content" role="dialog" aria-modal="true" aria-label="Image preview">
+      <img id="lb-img" alt="" />
+      <p id="lb-caption" class="lb-caption"></p>
+    </div>
+    <button id="lb-next" class="lb-nav lb-next" aria-label="Next (Right arrow)">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
